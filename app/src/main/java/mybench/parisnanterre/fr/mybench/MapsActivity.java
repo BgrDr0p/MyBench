@@ -21,6 +21,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+
+
     private GoogleMap mMap;
 
     @Override
@@ -32,8 +34,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        
+
     }
+
 
 
     @Override
@@ -41,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap = googleMap;
 
-        LatLng centerCamera = new LatLng(48.872156,2.347464); // position de la ville de Paris
+        LatLng centerCamera = new LatLng(48.872156,2.347464); // position de la caméra sur la  ville de Paris
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
