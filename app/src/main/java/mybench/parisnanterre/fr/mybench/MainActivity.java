@@ -2,6 +2,7 @@ package mybench.parisnanterre.fr.mybench;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.preference.DialogPreference;
 import android.support.annotation.NonNull;
@@ -26,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (ContextCompat.checkSelfPermission(MainActivity.this,
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(MainActivity.this, "You have already granted this permission!",
                             Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                    startActivity(i);
                 }
                 else {
                     requestLocationPermission();
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
                 Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(i);
 
 
             }
