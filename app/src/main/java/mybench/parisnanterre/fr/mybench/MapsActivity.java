@@ -53,8 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Ajouter des bancs sous forme de marker a proximité  de la position de l'utilisateur
 
-        Marker premierBanc = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(48.86125629633995, 2.3263978958129883))
+        Marker premierBanc = mMap.addMarker(new MarkerOptions().position(new LatLng(48.86125629633995, 2.3263978958129883))
                 .title("Banc1").snippet(" mon premier banc"));
 
         Marker deuxiemeBanc = mMap.addMarker(new MarkerOptions()
@@ -64,6 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Marker troisiemeBanc = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(48.83387658166071, 2.3323631286621094))
                 .title("Banc3").snippet(" mon troisieme banc"));
+
 
 
 
