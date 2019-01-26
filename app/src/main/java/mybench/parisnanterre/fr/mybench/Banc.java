@@ -3,6 +3,7 @@ package mybench.parisnanterre.fr.mybench;
 // classe qui décrit les elements scomposant un banc
 public class Banc {
 
+    private int id;
     private String titre;
     private double latitude;
     private double longitude;
@@ -10,15 +11,21 @@ public class Banc {
 
     public Banc() {};
 
-    public Banc(String titre,double latitude,double longitude,String info){
+    public Banc(int id,String titre,double latitude,double longitude,String info){
 
+        this.id = id;
         this.titre = titre;
         this.latitude = latitude;
         this.longitude = longitude;
         this.info = info;
     }
 
+    public int getID()
+    {
+        return this.id;
+    }
         // correspond au title des Markers
+
     public String getTitre() {
         return  this.titre;
 
@@ -31,6 +38,11 @@ public class Banc {
     }
     public String getInfo(){
         return this.info;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
 
@@ -49,5 +61,12 @@ public class Banc {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+
+    @Override
+    public String toString()
+    {
+        return "Id " + this.id + "Titre " + this.titre + "Latitude " + this.latitude + "Longitude" + this.longitude + "info" + this.info;
     }
 }
