@@ -1,9 +1,9 @@
-package mybench.parisnanterre.fr.mybench;
+package mybench.parisnanterre.fr.mybench.BDD;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-
+// CREATION DE LA BDD ET DE LA TABLE TB_BANC
 public class BancSqlite extends SQLiteOpenHelper {
     // INITIALISATION DE LA BDD ET DE LA TABLE
     private static final String TB_BANC = "TB_BANC";  // nom de la TABLE

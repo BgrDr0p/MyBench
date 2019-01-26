@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench;
+package mybench.parisnanterre.fr.mybench.BDD;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -103,6 +103,13 @@ public class BancBDD {
         return banc;
 
     }
+    public Cursor getAllBenches()
+    {
+        return  bdd.rawQuery("SELECT * FROM " +TB_BANC,null);
+    }
+
+
+
 
 
 

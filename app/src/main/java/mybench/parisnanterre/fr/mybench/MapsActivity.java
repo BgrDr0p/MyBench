@@ -17,6 +17,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import mybench.parisnanterre.fr.mybench.BDD.Banc;
+import mybench.parisnanterre.fr.mybench.BDD.BancBDD;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -63,6 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Marker troisiemeBanc = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(48.83387658166071, 2.3323631286621094))
                 .title("Banc3").snippet(" mon troisieme banc"));
+
 
 
 
