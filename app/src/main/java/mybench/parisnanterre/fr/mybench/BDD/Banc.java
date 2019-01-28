@@ -9,7 +9,7 @@ public class Banc {
     private double longitude;
     private String info;
 
-    public Banc() {};
+    public Banc(int id) {this.id = id;};
 
     public Banc(int id,String titre,double latitude,double longitude,String info){
 
