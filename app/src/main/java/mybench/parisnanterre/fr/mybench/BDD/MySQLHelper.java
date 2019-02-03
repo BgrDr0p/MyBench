@@ -1,15 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package mybench.parisnanterre.fr.mybench.BDD;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
+// Classe qui permet de crée la base de données nomées markerlocations.db
 public class MySQLHelper extends SQLiteOpenHelper{
 
 

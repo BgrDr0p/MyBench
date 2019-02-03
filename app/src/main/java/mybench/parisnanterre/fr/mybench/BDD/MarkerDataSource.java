@@ -1,12 +1,10 @@
-
 package mybench.parisnanterre.fr.mybench.BDD;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,13 +28,13 @@ public class MarkerDataSource {
         if (db != null && db.isOpen())
         db.close();
     }
-
+    // ajouter un banc
     public long addMarker(MyMarkerObj m){
         ContentValues v = new ContentValues();
 
         v.put(MySQLHelper.TITLE, m.getTitle());
         v.put(MySQLHelper.SNIPPET, m.getSnippet());
-        v.put(MySQLHelper.POSITION,m.getPosition().toString());
+        v.put(MySQLHelper.POSITION,m.getPosition());
 
 
 
