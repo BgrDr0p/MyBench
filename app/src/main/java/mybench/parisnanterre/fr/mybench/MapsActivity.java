@@ -22,16 +22,6 @@ import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private static final LatLng BANC1 = new LatLng(48.86125629633995, 2.3263978958129883);
-    private static final LatLng BANC2 = new LatLng(48.845259549865254, 2.3134374618530273);
-    private static final LatLng BANC3 = new LatLng(48.83387658166071, 2.3323631286621094);
-
-
-    private Marker banc1;
-    private Marker banc2;
-    private Marker banc3;
-
-
 
     private GoogleMap mMap;
 
@@ -71,7 +61,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             data.addMarker(new MyMarkerObj("Banc simple","Type Foch", "48.86135121011293, 2.378851443111679"));
         }
         catch (Exception e) {
-            Log.i("Erreur e ", e.toString());
+            Log.i("Erreur  ", e.toString());
         }
 
 
@@ -91,30 +81,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-<<<<<<< HEAD
-        // Ajouter des bancs sous forme de marker
-
-        banc1 = mMap.addMarker(new MarkerOptions()
-                .position(BANC1)
-                .title("premier banc")
-                .snippet("Disponible")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        banc1.setTag(0);
-
-        banc2 = mMap.addMarker(new MarkerOptions()
-                .position(BANC2)
-                .title("deuxieme banc")
-                .snippet("Disponible")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        banc2.setTag(0);
-
-        banc3 = mMap.addMarker(new MarkerOptions()
-                .position(BANC3)
-                .title(" troisieme banc")
-                .snippet("Disponible")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        banc3.setTag(0);
-=======
 
         //
         try {
@@ -129,6 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                          .position(new LatLng(LATITUDE,LONGITUDE))
                          .title(m.get(i).getTitle())
                          .snippet(m.get(i).getSnippet())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 
                 );
 
@@ -137,13 +104,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (Exception e) {
             Log.i("Erreur ", e.toString());
         }
-
-
-
->>>>>>> 7d8ff62f5fc52e27aec6332e63e540527813a954
-
-
-
 
 
     }
