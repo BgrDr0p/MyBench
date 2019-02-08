@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button buttonRequest = findViewById(R.id.bt_Banc);
+        Button buttonClosest = findViewById(R.id.bt_Closest);
+
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     requestLocationPermission();
                 }
+            }
+        });
+
+        buttonClosest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), ClosestBenchesActivity.class);
+                    startActivity(i);
+
             }
         });
     }
