@@ -47,7 +47,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //  MarkerDataSource data = new MarkerDataSource(context);
             // ouverture de la bdd
             data.open();
-
+            // data.close
 
             //  Insertion dans la bdd
             data.addMarker(new MyMarkerObj("Banc simple", "Type Stalingrad ", "48.84421693211892, 2.4379933164371344"));
