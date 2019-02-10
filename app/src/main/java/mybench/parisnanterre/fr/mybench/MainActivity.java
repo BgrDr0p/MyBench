@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     requestLocationPermission();
                 }
+                // test commit to branch
             }
         });
 

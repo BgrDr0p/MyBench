@@ -1,38 +1,68 @@
 package mybench.parisnanterre.fr.mybench;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
-
-import com.google.android.gms.maps.CameraUpdate;
+import android.util.Log;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import java.util.List;
+import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
+import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
 
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
 
-
     private GoogleMap mMap;
 
+    Context context = this;
+    MarkerDataSource data = new MarkerDataSource(context);
+
+
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        try
+        {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_maps);
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+            // Instance pour acceder à la BDD
+            //  MarkerDataSource data = new MarkerDataSource(context);
+            // ouverture de la bdd
+            data.open();
+
+
+            //  Insertion dans la bdd
+            data.addMarker(new MyMarkerObj("Banc simple", "Type Stalingrad ", "48.84421693211892, 2.4379933164371344"));
+            data.addMarker(new MyMarkerObj("Banc double","Type Stalingrad","48.84462393068919, 2.449371479377353"));
+            data.addMarker(new MyMarkerObj("Banc simple","Type Stalingrad", "48.86488440054312, 2.38154009068625"));
+            data.addMarker(new MyMarkerObj("Banc simple", "Type Stalingrad", "48.84206181110276, 2.388888661335503"));
+            data.addMarker(new MyMarkerObj("Banc double","Type Foch","48.841798798995406, 2.3899635222814877"));
+            data.addMarker(new MyMarkerObj("Banc simple","Type Foch", "48.829347031218646, 2.308172585069839"));
+            data.addMarker(new MyMarkerObj("Banc simple", "Type Foch", "48.86247961833146, 2.413008445073410"));
+            data.addMarker(new MyMarkerObj("Banc double","Type Foch","48.851947509969634, 2.39115733470809"));
+            data.addMarker(new MyMarkerObj("Banc simple","Type Foch", "48.86135121011293, 2.378851443111679"));
+        }
+        catch (Exception e) {
+            Log.i("Erreur  ", e.toString());
+        }
 
 
     }
@@ -44,31 +74,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap = googleMap;
 
-        LatLng centerCamera = new LatLng(48.872156,2.347464); // position de la caméra sur la  ville de Paris
+        LatLng centerCamera = new LatLng(48.872156,2.347464);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
             mMap.setMyLocationEnabled(true);
         }
 
-        // Ajouter des bancs sous forme de marker a proximité  de la position de l'utilisateur
 
-        Marker premierBanc = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(48.86125629633995, 2.3263978958129883))
-                .title("Banc1").snippet(" mon premier banc"));
+        //
+        try {
+            List<MyMarkerObj> m = data.getMyMarkers();
+            for (int i = 0; i < m.size(); i++)
+            {
 
-        Marker deuxiemeBanc = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(48.845259549865254, 2.3134374618530273))
-                .title("Banc2").snippet(" mon deuxieme banc"));
+                String[] slatlng =  m.get(i).getPosition().trim().split(", ");
+                Double LATITUDE = Double.valueOf(String.valueOf(slatlng[0]));
+                Double LONGITUDE = Double.valueOf(String.valueOf(slatlng[1]));
+                mMap.addMarker(new MarkerOptions()
+                         .position(new LatLng(LATITUDE,LONGITUDE))
+                         .title(m.get(i).getTitle())
+                         .snippet(m.get(i).getSnippet())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 
-        Marker troisiemeBanc = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(48.83387658166071, 2.3323631286621094))
-                .title("Banc3").snippet(" mon troisieme banc"));
+                );
 
 
+            }
+        } catch (Exception e) {
+            Log.i("Erreur ", e.toString());
+        }
 
 
     }
 
-    
+
+
+
 }
