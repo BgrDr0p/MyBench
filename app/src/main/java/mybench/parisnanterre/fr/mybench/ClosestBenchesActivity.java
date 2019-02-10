@@ -22,14 +22,14 @@ public class ClosestBenchesActivity extends Activity {
         listView = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-        String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View"
+        String[] values = new String[] {
+                "Banc 1, disponible a 20 mètres",
+                "Banc 2, disponible a 40 mètres",
+                "Banc 3, disponible a 50 mètres",
+                "Banc 4, disponible a 60 mètres",
+                "Banc 5, disponible a 80 mètres",
+                "Banc 6, disponible a 100 mètres",
+
         };
 
         // Define a new Adapter
