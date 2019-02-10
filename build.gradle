@@ -15,7 +15,7 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-apply plugin: "org.sonarqube"
+ // apply plugin: "org.sonarqube"
 
 allprojects {
     repositories {
@@ -28,4 +28,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
 

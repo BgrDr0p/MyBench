@@ -23,7 +23,6 @@ import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
 
-
     private GoogleMap mMap;
 
     Context context = this;
@@ -62,7 +61,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             data.addMarker(new MyMarkerObj("Banc simple","Type Foch", "48.86135121011293, 2.378851443111679"));
         }
         catch (Exception e) {
-            Log.i("Erreur ", e.toString());
+            Log.i("Erreur  ", e.toString());
         }
 
 
@@ -75,7 +74,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap = googleMap;
 
-        LatLng centerCamera = new LatLng(48.872156,2.347464); // position de la caméra sur la  ville de Paris
+        LatLng centerCamera = new LatLng(48.872156,2.347464);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
@@ -96,6 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                          .position(new LatLng(LATITUDE,LONGITUDE))
                          .title(m.get(i).getTitle())
                          .snippet(m.get(i).getSnippet())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 
 
                 );
@@ -105,12 +105,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (Exception e) {
             Log.i("Erreur ", e.toString());
         }
-
-
-
-
-
-
 
 
     }
