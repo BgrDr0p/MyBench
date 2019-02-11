@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // clic sur "Voir les bancs sans se connecter"
 
                 if (ContextCompat.checkSelfPermission(MainActivity.this,
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -45,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonClosest.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "You have already granted this permission!",
-                            Toast.LENGTH_SHORT).show();
+            public void onClick(View v) { // clic sur "Voir les bancs les plus proches
                     Intent i = new Intent(getApplicationContext(), ClosestBenchesActivity.class);
                     startActivity(i);
 
