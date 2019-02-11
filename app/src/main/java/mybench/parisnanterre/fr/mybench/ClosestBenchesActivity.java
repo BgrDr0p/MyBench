@@ -37,6 +37,7 @@ public class ClosestBenchesActivity extends Activity {
 
 
         // Defined Array values to show in ListView
+
         /*String[] values = new String[] { "Android List View",
                 "Adapter implementation",
                 "Simple List View In Android",
@@ -52,6 +53,18 @@ public class ClosestBenchesActivity extends Activity {
             values.add(listeBancs.get(i).getNom());
             i++;
         }
+
+        /*String[] values = new String[] {
+                "Banc 1, disponible a 20 mètres",
+                "Banc 2, disponible a 40 mètres",
+                "Banc 3, disponible a 50 mètres",
+                "Banc 4, disponible a 60 mètres",
+                "Banc 5, disponible a 80 mètres",
+                "Banc 6, disponible a 100 mètres",
+
+        };*/
+
+
         // Define a new Adapter
         // First parameter - Context
         // Second parameter - Layout for the row
