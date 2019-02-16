@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench;
+package mybench.parisnanterre.fr.mybench.Vue;
 
 import android.Manifest;
 import android.content.Context;
@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
 import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
-
+import mybench.parisnanterre.fr.mybench.R;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -95,7 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                          .position(new LatLng(LATITUDE,LONGITUDE))
                          .title(m.get(i).getTitle())
                          .snippet(m.get(i).getSnippet())
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 
 
                 );
@@ -108,8 +108,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     }
-
-
-
 
 }

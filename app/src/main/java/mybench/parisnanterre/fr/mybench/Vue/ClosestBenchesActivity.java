@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench;
+package mybench.parisnanterre.fr.mybench.Vue;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import mybench.parisnanterre.fr.mybench.R;
 
 public class ClosestBenchesActivity extends Activity {
     ListView listView ;
@@ -53,8 +55,8 @@ public class ClosestBenchesActivity extends Activity {
                                     int position, long id) {
 
                 // ListView Clicked item index
-                int itemPosition     = position;
 
+                int itemPosition     = position;
                 // ListView Clicked item value
                 String  itemValue    = (String) listView.getItemAtPosition(position);
 

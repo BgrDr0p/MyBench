@@ -18,14 +18,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Vue.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapsActivity">
+        <activity android:name=".Vue.MapsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAPS" />
 
@@ -44,7 +44,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ClosestBenchesActivity"></activity>
+        <activity android:name=".Vue.ClosestBenchesActivity"></activity>
     </application>
 
 </manifest>

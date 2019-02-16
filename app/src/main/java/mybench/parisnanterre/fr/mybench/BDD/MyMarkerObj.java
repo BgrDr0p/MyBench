@@ -10,6 +10,7 @@ public class MyMarkerObj {
     private String position;
 
     public MyMarkerObj() {
+
     }
 
     public MyMarkerObj(long id, String title, String snippet, String position) {
