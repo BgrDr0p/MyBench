@@ -47,4 +47,6 @@
         <activity android:name=".Vue.ClosestBenchesActivity"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" /> // permettre l'accès a internet
+
 </manifest>
