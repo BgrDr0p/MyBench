@@ -21,9 +21,9 @@ public class AccesHTTP extends AsyncTask<String, Integer, Long> {
 
     private ArrayList<NameValuePair> parametre;
     private String retour = null;
-    private AsyncResponse delegate = null;
+    public AsyncResponse delegate = null;
 
-    public AccesHTTP(ArrayList<NameValuePair> parametre){
+    public AccesHTTP(){
 
         parametre = new ArrayList<NameValuePair>();
     }
@@ -71,6 +71,6 @@ public class AccesHTTP extends AsyncTask<String, Integer, Long> {
     protected void onPostExecute(Long result){
 
         delegate.processFinish(retour.toString());
-        
+
     }
 }
