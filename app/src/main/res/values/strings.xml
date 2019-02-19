@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MyBench</string>
     <string name="title_activity_maps">Map</string>
+    <string name="Titre">Donner un avis sur ce banc</string>
+    <string name="evaluation_de_la_propret">Evaluation de la propreté :</string>
+    <string name="evaluation_env">Evaluation de l\'environnement :</string>
+    <string name="retour">RETOUR</string>
+    <string name="commentaire_sur_le_banc">Commentaire sur le banc</string>
+    <string name="envoyer">ENVOYER</string>
 </resources>
