@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench.Vue;
+package mybench.parisnanterre.fr.mybench;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import mybench.parisnanterre.fr.mybench.R;
+
 
 public class ClosestBenchesActivity extends Activity {
     ListView listView ;
@@ -33,12 +34,6 @@ public class ClosestBenchesActivity extends Activity {
                 "Banc 6, disponible a 100 mètres",
 
         };
-
-        // Define a new Adapter
-        // First parameter - Context
-        // Second parameter - Layout for the row
-        // Third parameter - ID of the TextView to which the data is written
-        // Forth - the Array of data
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);

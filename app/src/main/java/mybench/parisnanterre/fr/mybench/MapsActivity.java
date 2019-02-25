@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench.Vue;
+package mybench.parisnanterre.fr.mybench;
 
 import android.Manifest;
 import android.content.Context;
@@ -27,10 +27,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     Context context = this;
     MarkerDataSource data = new MarkerDataSource(context);
-
-
-
-
 
 
     @Override
@@ -99,7 +95,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
                 );
-
 
             }
         } catch (Exception e) {

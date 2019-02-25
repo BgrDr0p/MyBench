@@ -1,4 +1,4 @@
-package mybench.parisnanterre.fr.mybench.Vue;
+package mybench.parisnanterre.fr.mybench;
 
 import android.Manifest;
 import android.content.DialogInterface;
@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import mybench.parisnanterre.fr.mybench.R;
-
 public class MainActivity extends AppCompatActivity {
     private int STORAGE_LOCATION_CODE = 1;
 
@@ -26,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button buttonRequest = findViewById(R.id.bt_Banc);
         Button buttonClosest = findViewById(R.id.bt_Closest);
+        Button buttonFormulaire = findViewById(R.id.bt_formulaire);
 
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     private void requestLocationPermission() {
