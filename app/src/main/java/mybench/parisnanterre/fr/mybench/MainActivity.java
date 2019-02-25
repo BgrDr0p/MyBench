@@ -55,6 +55,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonFormulaire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), ConnexionActivity.class);
+                startActivity(i);
+
+            }
+        })
+        ;
+
 
     }
 

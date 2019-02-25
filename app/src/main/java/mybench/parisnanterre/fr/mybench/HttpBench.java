@@ -1,6 +1,5 @@
 package mybench.parisnanterre.fr.mybench;
 
-package mybench.parisnanterre.fr.mybench;
 
 
 
@@ -21,7 +20,7 @@ public class HttpBench{
     private OkHttpClient client = new OkHttpClient();
 
     private String SERVEUR = "https://mybench.000webhostapp.com/service.php";
-    
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public String Create(String url, String title, String snippet, String lat, String lng) throws IOException {

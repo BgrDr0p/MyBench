@@ -1,9 +1,5 @@
 package mybench.parisnanterre.fr.mybench;
 
-package mybench.parisnanterre.fr.mybench;
-
-
-
 import android.annotation.TargetApi;
 import android.nfc.Tag;
 import android.os.AsyncTask;
@@ -33,10 +29,10 @@ public class ConnexionActivity extends AppCompatActivity {
 
             // recuperation des elements venant de la vue
 
-            title = (EditText)findViewById(R.id.title); snippet = (EditText)findViewById(R.id.snippet);
-            lat = (EditText)findViewById(R.id.lat); lng = (EditText)findViewById(R.id.lng);
+            title = (EditText)findViewById(R.id.nom); snippet = (EditText)findViewById(R.id.email);
+            lat = (EditText)findViewById(R.id.lng);
 
-            bouton = (Button)findViewById(R.id.bouton);
+            lng = (EditText)findViewById(R.id.lat); bouton = (Button)findViewById(R.id.bouton);
 
             // creation du listener sur l'objet bouton
 
@@ -47,7 +43,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
                     // l'operation de communication doit se faire en arriere plan d'ou l'utilisation de l'asynctask
 
-                    new AddBench().execute("create",title.getText().toString(),snippet.getText().toString(),lat.getText().toString(),lng.getText().toString());
+                    new AddUser().execute("create",title.getText().toString(),snippet.getText().toString(),lat.getText().toString(), lng.getText().toString());
 
                 }
             });
@@ -62,7 +58,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
     // Asynctask destine a l'operation d'arriere plan
 
-    private class AddBench extends AsyncTask<String, Void, String> {
+    private class AddUser extends AsyncTask<String, Void, String> {
         @TargetApi(Build.VERSION_CODES.KITKAT)
         @Override
         protected String doInBackground(String... args) {
@@ -94,6 +90,4 @@ public class ConnexionActivity extends AppCompatActivity {
         }
     }
 
-
-
-
+}
