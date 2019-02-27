@@ -8,13 +8,6 @@
     android:paddingRight="20dip"
     android:paddingBottom="25dip">
 
-    <ImageView
-        android:id="@+id/photo"
-        android:layout_width="60dip"
-        android:layout_height="60dip"
-        android:src="@drawable/banc"
-        android:layout_marginLeft="8dip"
-        android:layout_gravity="center_vertical"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -38,7 +31,7 @@
                 android:id="@+id/nameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Amixx XX Soluxxxxx"
+                android:text=" Banc Simple"
                 android:textSize="10dip"
                 android:gravity="center_vertical"
                 android:textColor="#000000"/>
@@ -82,7 +75,7 @@
                 android:id="@+id/pollution"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="android@gmail.com"
+                android:text="Bien"
                 android:textSize="10dip"
                 android:gravity="center_vertical"
                 android:textColor="#000000"/>
@@ -105,7 +98,7 @@
                 android:id="@+id/bruit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="android@gmail.com"
+                android:text="Beaucoup de bruit"
                 android:textSize="10dip"
                 android:gravity="center_vertical"
                 android:textColor="#000000"/>
@@ -113,12 +106,12 @@
         </LinearLayout>
 
         <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
             android:background="@android:color/holo_blue_dark"
             android:textColor="@android:color/white"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:layout_gravity="center"
             android:shadowColor="@android:color/holo_blue_light"
             android:id="@+id/btn_note"

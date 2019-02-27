@@ -31,8 +31,8 @@ public class CustomInfoWindowsAdapter implements GoogleMap.InfoWindowAdapter {
         TextView tvGir = (TextView) v.findViewById(R.id.environnement);
         TextView tvDetails = (TextView) v.findViewById(R.id.pollution);
         // TextView tvLng = (TextView) v.findViewById(R.id.tv_lng);
-        tvGir.setText("Gir Forest is located in the Gujarat State of India");
-        tvDetails.setText("Forest is maily known for the Asiatic Lions.");
+        tvGir.setText("Mauvais paysage");
+        tvDetails.setText("Très pollué");
         //tvLng.setText("Longitude:"+ latLng.longitude);
         return v;
     }
