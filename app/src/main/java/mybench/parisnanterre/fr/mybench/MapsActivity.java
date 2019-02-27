@@ -74,37 +74,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap = googleMap;
 
+
         LatLng centerCamera = new LatLng(48.872156,2.347464);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
             mMap.setMyLocationEnabled(true);
         }
+        // Setting a custom info window adapter for the google map
+        CustomInfoWindowsAdapter markerInfoWindowAdapter = new CustomInfoWindowsAdapter(getApplicationContext());
+        googleMap.setInfoWindowAdapter(markerInfoWindowAdapter);
 
 
-        //
-        try {
+
+
             List<MyMarkerObj> m = data.getMyMarkers();
             for (int i = 0; i < m.size(); i++)
             {
-
+                mMap.clear();
                 String[] slatlng =  m.get(i).getPosition().trim().split(", ");
                 Double LATITUDE = Double.valueOf(String.valueOf(slatlng[0]));
                 Double LONGITUDE = Double.valueOf(String.valueOf(slatlng[1]));
                 mMap.addMarker(new MarkerOptions()
-                         .position(new LatLng(LATITUDE,LONGITUDE))
-                         .title(m.get(i).getTitle())
-                         .snippet(m.get(i).getSnippet())
+                        .position(new LatLng(LATITUDE,LONGITUDE))
+                        .title(m.get(i).getTitle())
+                        .snippet(m.get(i).getSnippet())
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-
-
                 );
-
-
             }
-        } catch (Exception e) {
-            Log.i("Erreur ", e.toString());
+
+        
+
         }
+
+
+
 
 
     }
@@ -112,4 +116,3 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-}

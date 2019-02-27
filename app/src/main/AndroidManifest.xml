@@ -44,7 +44,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ClosestBenchesActivity"></activity>
+        <activity android:name=".ClosestBenchesActivity" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@layout/custom_infowindow"
+            />
+
     </application>
 
 </manifest>
