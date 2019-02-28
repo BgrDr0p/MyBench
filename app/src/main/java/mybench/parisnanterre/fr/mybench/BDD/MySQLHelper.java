@@ -20,11 +20,11 @@ public class MySQLHelper extends SQLiteOpenHelper{
     private static final String DB_NAME = "markerlocations.db";
     private static final String DB_CREATE =
             "create table "+ TABLE_NAME + "("
-                    + ID_COL + " integer primary key autoincrement, "
-                    + TITLE + " text, "
-                    + SNIPPET + " text, "
-                    + POSITION + " text);"
-            ;
+            + ID_COL + " integer primary key autoincrement, "
+            + TITLE + " text, "
+            + SNIPPET + " text, "
+            + POSITION + " text);"
+    ;
     public MySQLHelper(Context context) {
         super(context, DB_NAME, null, D_VERSION);
     }

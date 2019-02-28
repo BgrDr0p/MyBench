@@ -43,7 +43,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
                     // l'operation de communication doit se faire en arriere plan d'ou l'utilisation de l'asynctask
 
-                    new AddUser().execute("create",title.getText().toString(),snippet.getText().toString(),lat.getText().toString(), lng.getText().toString());
+                    new AddBench().execute("create",title.getText().toString(),snippet.getText().toString(),lat.getText().toString(), lng.getText().toString());
 
                 }
             });
@@ -58,7 +58,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
     // Asynctask destine a l'operation d'arriere plan
 
-    private class AddUser extends AsyncTask<String, Void, String> {
+    private class AddBench extends AsyncTask<String, Void, String> {
         @TargetApi(Build.VERSION_CODES.KITKAT)
         @Override
         protected String doInBackground(String... args) {
