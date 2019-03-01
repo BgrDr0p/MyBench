@@ -1,7 +1,9 @@
 package mybench.parisnanterre.fr.mybench;
 
 import android.app.Activity;
+import android.content.Context;
 import android.location.Location;
+import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +14,18 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import java.util.ArrayList;
 
 public class ClosestBenchesActivity extends Activity {
     ListView listView ;
     ArrayList<Bench> listeBancs = new ArrayList<Bench>();
+    private GoogleApiClient mGoogleApiClient;
+    private Location currentLocation;
+    private LocationManager locationManager;
+    //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
+
 
 
     @Override
@@ -37,7 +46,14 @@ public class ClosestBenchesActivity extends Activity {
         listeBancs.add(new Bench(48.852372565095216, 2.3695847475448555, "Banc à Bastille"));
         listeBancs.add(new Bench(48.85965097919809, 2.3721461680849063, "Banc à Richard Lenoir"));
 
-        Location currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
 
         // Defined Array values to show in ListView
         /*String[] values = new String[] { "Android List View",

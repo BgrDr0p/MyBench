@@ -29,10 +29,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     MarkerDataSource data = new MarkerDataSource(context);
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
