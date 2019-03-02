@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private int STORAGE_LOCATION_CODE = 1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
         Button buttonRequest = findViewById(R.id.bt_Banc);
         Button buttonClosest = findViewById(R.id.bt_Closest);

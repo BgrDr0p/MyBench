@@ -3,6 +3,7 @@ package mybench.parisnanterre.fr.mybench;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +15,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
 import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
@@ -22,6 +30,9 @@ import mybench.parisnanterre.fr.mybench.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+
+    private Double Latitude = 0.00;
+    private Double Longitude = 0.00;
 
     private GoogleMap mMap;
 
@@ -60,6 +71,50 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Log.i("Erreur  ", e.toString());
         }
 
+        /* --------------------------------------------------------------------------------------------- */
+
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+        ArrayList<HashMap<String, String>> location = null;
+
+        String url = "https://mybench.000webhostapp.com/service.php";
+        try {
+
+            JSONArray data = new JSONArray(getHttpGet(url));
+
+            location = new ArrayList<HashMap<String, String>>();
+
+            HashMap<String, String> map;
+            
+            for(int i = 0; i < data.length(); i++){
+
+                JSONObject c = data.getJSONObject(i);
+
+                map = new HashMap<String, String>();
+
+                map.put("title", c.getString("title"));
+                map.put("snippet", c.getString("snippet"));
+
+                map.put("lat", c.getString("lat"));
+
+                map.put("lng", c.getString("lng"));
+
+                location.add(map);
+
+            }
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+        }
+
+
+
+
 
     }
 
@@ -88,10 +143,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Double LATITUDE = Double.valueOf(String.valueOf(slatlng[0]));
                 Double LONGITUDE = Double.valueOf(String.valueOf(slatlng[1]));
                 mMap.addMarker(new MarkerOptions()
-                         .position(new LatLng(LATITUDE,LONGITUDE))
-                         .title(m.get(i).getTitle())
-                         .snippet(m.get(i).getSnippet())
-                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+                        .position(new LatLng(LATITUDE,LONGITUDE))
+                        .title(m.get(i).getTitle())
+                        .snippet(m.get(i).getSnippet())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
 
 
                 );
