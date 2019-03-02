@@ -1,9 +1,13 @@
 package mybench.parisnanterre.fr.mybench;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -53,18 +60,15 @@ public class ClosestBenchesActivity extends Activity {
                 .build();
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
-
-        // Defined Array values to show in ListView
-        /*String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View"
-        };*/
+        // NE PAS OUBLIER DE REGARDER https://stackoverflow.com/questions/28301273/onconnected-not-being-called-to-get-location-updates-googleplayapi-for-locati au cas où
+        // tuto : https://stackoverflow.com/questions/33415033/getting-current-location-in-android-studio-app
+        if (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient); // cas où permission gps déjà acceptée, on récupère la position géo
+        }
+        else {
+            // requestLocationPermission(); // si pas déjà acceptée, requester la permission
+        }
         ArrayList<String> values = new ArrayList<String>();
         int i = 0;
         while (i < listeBancs.size()){
