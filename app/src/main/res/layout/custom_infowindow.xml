@@ -6,7 +6,9 @@
     android:paddingTop="5dip"
     android:paddingLeft="10dip"
     android:paddingRight="20dip"
-    android:paddingBottom="25dip">
+    android:paddingBottom="25dip"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
 
 
     <LinearLayout
@@ -53,7 +55,7 @@
                 android:id="@+id/environnement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+91-98XXXXX200"
+                android:text="Bon"
                 android:textSize="10dip"
                 android:gravity="center_vertical"
                 android:textColor="#000000"/>
@@ -116,6 +118,7 @@
             android:shadowColor="@android:color/holo_blue_light"
             android:id="@+id/btn_note"
             android:text="Notez ce banc"
+
             />
 
 

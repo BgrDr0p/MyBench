@@ -2,14 +2,19 @@ package mybench.parisnanterre.fr.mybench;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.nfc.Tag;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -29,7 +34,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private GoogleMap mMap;
-
+    private Button infoButton1;
     Context context = this;
     MarkerDataSource data = new MarkerDataSource(context);
 
@@ -42,11 +47,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState)
     {
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_maps);
-            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-            mapFragment.getMapAsync(this);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
 
 
 
@@ -55,12 +61,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
+
+
+
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
-
-
+        mMap.setOnInfoWindowClickListener(MyOnInfoWindowClickListener);
         LatLng centerCamera = new LatLng(48.872156,2.347464);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
@@ -84,6 +92,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         }
+
+
+
+    GoogleMap.OnInfoWindowClickListener MyOnInfoWindowClickListener
+            = new GoogleMap.OnInfoWindowClickListener(){
+        @Override
+        public void onInfoWindowClick(Marker marker) {
+            Intent i = new Intent(getApplicationContext(), ClosestBenchesActivity.class);
+            startActivity(i);
+        }
+    };
+
+
+
+
+
+
+
+
+
+
 
 
 
