@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
 
@@ -32,6 +33,7 @@ public class ClosestBenchesActivity extends Activity {
     private Location currentLocation;
     private LocationManager locationManager;
     //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
+    private FusedLocationProviderClient mFusedLocationClient;
 
 
 
@@ -64,7 +66,8 @@ public class ClosestBenchesActivity extends Activity {
         // tuto : https://stackoverflow.com/questions/33415033/getting-current-location-in-android-studio-app
         if (ContextCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient); // cas où permission gps déjà acceptée, on récupère la position géo
+            //currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient); // cas où permission gps déjà acceptée, on récupère la position géo
+            mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         }
         else {
             // requestLocationPermission(); // si pas déjà acceptée, requester la permission
