@@ -19,19 +19,22 @@ public class HttpBench{
 
     private OkHttpClient client = new OkHttpClient();
 
+
     private String SERVEUR = "https://mybench.000webhostapp.com/service.php";
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public String Create(String url, String title, String snippet, String lat, String lng) throws IOException {
+    public String Create(String url, String BENCH_TITLE, String BENCH_POSITION, String BENCH_ENVIRONNEMENT,
+                         String BENCH_POLLUTION, String BENCH_BRUIT) throws IOException {
 
         RequestBody requestBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("action", url)
-                .addFormDataPart("title", title)
-                .addFormDataPart("snippet", snippet)
-                .addFormDataPart("lat", lat)
-                .addFormDataPart("lng",lng)
+                .addFormDataPart("BENCH_TITLE", BENCH_TITLE)
+                .addFormDataPart("BENCH_POSITION", BENCH_POSITION)
+                .addFormDataPart("BENCH_ENVIRONNEMENT", BENCH_ENVIRONNEMENT)
+                .addFormDataPart("BENCH_POLLUTION",BENCH_POLLUTION)
+                .addFormDataPart("BENCH_BRUIT", BENCH_BRUIT)
                 .build();
 
         Request request = new Request.Builder()
@@ -43,6 +46,7 @@ public class HttpBench{
             return response.body().string();
         }
     }
+
 }
 
 

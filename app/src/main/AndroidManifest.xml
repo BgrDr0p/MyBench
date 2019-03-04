@@ -46,6 +46,9 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".ClosestBenchesActivity"></activity>
+        <activity android:name=".MainBenchActivity"></activity>
+
+
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

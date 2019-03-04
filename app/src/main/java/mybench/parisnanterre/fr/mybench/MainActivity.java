@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private int STORAGE_LOCATION_CODE = 1;
+        private int STORAGE_LOCATION_CODE = 1;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonRequest = findViewById(R.id.bt_Banc);
         Button buttonClosest = findViewById(R.id.bt_Closest);
         Button buttonFormulaire = findViewById(R.id.bt_formulaire);
+        Button buttonBenchs = findViewById(R.id.bt_benchs);
 
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     requestLocationPermission();
                 }
-                // test commit to branch
+
             }
         });
 
@@ -61,6 +62,18 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "You have already granted this permission!",
                         Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), ConnexionActivity.class);
+                startActivity(i);
+
+            }
+        })
+        ;
+
+        buttonBenchs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), MainBenchActivity.class);
                 startActivity(i);
 
             }
