@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".ConnexionActivity">
+    tools:context=".AddBench">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="title"
+        android:text="Type de banch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,14 +22,15 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
-        android:id="@+id/nom"
+        android:id="@+id/type"
         android:layout_margin="5dp"
-        android:layout_height="35dp" />
+        android:layout_height="35dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="snippet"
+        android:text="environnement"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,7 +42,7 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
-        android:id="@+id/email"
+        android:id="@+id/environnement"
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="5dp"
-        android:text="latitude"
+        android:text="Pollution"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -61,7 +62,7 @@
         android:background="#FFFFFF"
         android:padding="5dp"
         android:inputType="phone"
-        android:id="@+id/lat"
+        android:id="@+id/pollution"
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -70,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="5dp"
-        android:text="longitude"
+        android:text="Bruit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -81,7 +82,7 @@
         android:background="#FFFFFF"
         android:padding="5dp"
         android:inputType="phone"
-        android:id="@+id/lng"
+        android:id="@+id/bruit"
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -90,7 +91,7 @@
         android:padding="10dp"
         android:layout_margin="5dp"
         android:id="@+id/bouton"
-        android:text="ENREGISTRER LES DONNEES"
+        android:text="ENREGISTRER LES MODIFICATIONS"
         android:layout_height="wrap_content" />
 
 
