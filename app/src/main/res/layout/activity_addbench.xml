@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".ConnexionActivity">
+    tools:context=".AddBench">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="title"
+        android:text="Type de banch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,14 +22,23 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:id="@+id/BENCH_TITLE"
+=======
+        android:id="@+id/type"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         android:layout_margin="5dp"
-        android:layout_height="35dp" />
+        android:layout_height="35dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:text="position"
+=======
+        android:text="environnement"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,8 +50,12 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:id="@+id/BENCH_POSITION"
         android:inputType="phone"
+=======
+        android:id="@+id/environnement"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -51,7 +64,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:text="environnement"
+=======
+        android:text="Pollution"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -61,7 +78,12 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:id="@+id/BENCH_ENVIRONNEMENT"
+=======
+        android:inputType="phone"
+        android:id="@+id/pollution"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -70,7 +92,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:text="pollution"
+=======
+        android:text="Bruit"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -80,6 +106,7 @@
         android:layout_width="match_parent"
         android:background="#FFFFFF"
         android:padding="5dp"
+<<<<<<< HEAD:app/src/main/res/layout/activity_connexion.xml
         android:id="@+id/BENCH_POLLUTION"
         android:layout_margin="5dp"
         android:layout_height="35dp" />
@@ -100,6 +127,10 @@
         android:background="#FFFFFF"
         android:padding="5dp"
         android:id="@+id/BENCH_BRUIT"
+=======
+        android:inputType="phone"
+        android:id="@+id/bruit"
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236:app/src/main/res/layout/activity_addbench.xml
         android:layout_margin="5dp"
         android:layout_height="35dp" />
 
@@ -108,7 +139,7 @@
         android:padding="10dp"
         android:layout_margin="5dp"
         android:id="@+id/bouton"
-        android:text="ENREGISTRER LES DONNEES"
+        android:text="ENREGISTRER LES MODIFICATIONS"
         android:layout_height="wrap_content" />
 
 

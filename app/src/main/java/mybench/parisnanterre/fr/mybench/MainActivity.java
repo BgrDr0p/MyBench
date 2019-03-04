@@ -10,6 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,7 +26,29 @@ public class MainActivity extends AppCompatActivity {
         Button buttonRequest = findViewById(R.id.bt_Banc);
         Button buttonClosest = findViewById(R.id.bt_Closest);
         Button buttonFormulaire = findViewById(R.id.bt_formulaire);
+<<<<<<< HEAD
         Button buttonBenchs = findViewById(R.id.bt_benchs);
+=======
+        Button buttonRecup = findViewById(R.id.btn_recup);
+
+        buttonRecup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), RecupBench.class);
+                    startActivity(i);
+                }
+                else {
+                    requestLocationPermission();
+                }
+                // test commit to branch
+            }
+        });
+>>>>>>> 9d220ae181f8256368cabb8f670be8715e847236
 
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,18 +78,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        try
+        {
+            buttonFormulaire.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), AddBench.class);
+                    startActivity(i);
 
-        buttonFormulaire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You have already granted this permission!",
-                        Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), ConnexionActivity.class);
-                startActivity(i);
-
-            }
-        })
-        ;
+                }
+            })
+            ;
+        }
+        catch (Exception e)
+        {
+            Log.i("Erreur0  ", e.toString());
+        }
 
         buttonBenchs.setOnClickListener(new View.OnClickListener() {
             @Override

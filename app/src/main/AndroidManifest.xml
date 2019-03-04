@@ -5,6 +5,12 @@
     <!-- demande à l'utilisateur la permisison d'acceder à son GPS (pour les API inferieure a 5.1) -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- API REST -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- API REST -->
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -32,7 +38,20 @@
                 <category android:name="android.intent.category.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConnexionActivity"/>
+        <activity android:name=".AddBench">
+        <intent-filter>
+            <action android:name="android.intent.action.MAPS" />
+
+            <category android:name="android.intent.category.MAIN" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".RecupBench">
+            <intent-filter>
+                <action android:name="android.intent.action.MAPS" />
+
+                <category android:name="android.intent.category.MAIN" />
+            </intent-filter>
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
