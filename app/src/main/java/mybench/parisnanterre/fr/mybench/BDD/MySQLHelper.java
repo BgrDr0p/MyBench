@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 // Classe qui permet de crée la base de données nomées markerlocations.db
-public class MySQLHelper extends SQLiteOpenHelper{
+public class MySQLHelper extends SQLiteOpenHelper {
 
 
     public static final String TABLE_NAME = "locations";
@@ -19,16 +19,15 @@ public class MySQLHelper extends SQLiteOpenHelper{
 
     private static final String DB_NAME = "markerlocations.db";
     private static final String DB_CREATE =
-            "create table "+ TABLE_NAME + "("
-            + ID_COL + " integer primary key autoincrement, "
-            + TITLE + " text, "
-            + SNIPPET + " text, "
-            + POSITION + " text);"
-    ;
+            "create table " + TABLE_NAME + "("
+                    + ID_COL + " integer primary key autoincrement, "
+                    + TITLE + " text, "
+                    + SNIPPET + " text, "
+                    + POSITION + " text);";
+
     public MySQLHelper(Context context) {
         super(context, DB_NAME, null, D_VERSION);
     }
-
 
 
     @Override
@@ -41,6 +40,6 @@ public class MySQLHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
-
-
 }
+
+

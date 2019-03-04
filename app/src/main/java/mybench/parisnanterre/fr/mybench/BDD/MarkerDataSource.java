@@ -26,14 +26,14 @@ public class MarkerDataSource {
     public void close(){
         dbhelper.getReadableDatabase();
         if (db != null && db.isOpen())
-        db.close();
+            db.close();
     }
     // ajouter un banc
     public long addMarker(MyMarkerObj m){
         ContentValues v = new ContentValues();
 
         v.put(MySQLHelper.TITLE, m.getTitle());
-     //   v.put(MySQLHelper.SNIPPET, m.getSnippet());
+        v.put(MySQLHelper.SNIPPET, m.getSnippet());
         v.put(MySQLHelper.POSITION,m.getPosition());
 
 
@@ -69,7 +69,7 @@ public class MarkerDataSource {
     private MyMarkerObj cursorToMarker(Cursor cursor) {
         MyMarkerObj m = new MyMarkerObj();
         m.setTitle(cursor.getString(0));
-     //   m.setSnippet(cursor.getString(1));
+        m.setSnippet(cursor.getString(1));
 
         m.setPosition(cursor.getString(2));
         return m;

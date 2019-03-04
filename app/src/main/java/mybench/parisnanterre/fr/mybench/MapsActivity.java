@@ -3,11 +3,10 @@ package mybench.parisnanterre.fr.mybench;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -16,9 +15,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
-
 import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
 import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
+
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -30,9 +29,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     MarkerDataSource data = new MarkerDataSource(context);
 
 
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        try {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        try
+        {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_maps);
             // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -45,7 +50,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // data.close
 
             //  Insertion dans la bdd
-            /*
             data.addMarker(new MyMarkerObj("Banc simple", "Type Stalingrad ", "48.84421693211892, 2.4379933164371344"));
             data.addMarker(new MyMarkerObj("Banc double","Type Stalingrad","48.84462393068919, 2.449371479377353"));
             data.addMarker(new MyMarkerObj("Banc simple","Type Stalingrad", "48.86488440054312, 2.38154009068625"));
@@ -55,31 +59,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             data.addMarker(new MyMarkerObj("Banc simple", "Type Foch", "48.86247961833146, 2.413008445073410"));
             data.addMarker(new MyMarkerObj("Banc double","Type Foch","48.851947509969634, 2.39115733470809"));
             data.addMarker(new MyMarkerObj("Banc simple","Type Foch", "48.86135121011293, 2.378851443111679"));
-            */
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             Log.i("Erreur  ", e.toString());
         }
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 9d220ae181f8256368cabb8f670be8715e847236
     }
 
 
+
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap)
+    {
         mMap = googleMap;
 
-        LatLng centerCamera = new LatLng(48.872156, 2.347464);
+        LatLng centerCamera = new LatLng(48.872156,2.347464);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(centerCamera));
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        {
             mMap.setMyLocationEnabled(true);
         }
 
 
         //
-       /* try {
+        try {
             List<MyMarkerObj> m = data.getMyMarkers();
             for (int i = 0; i < m.size(); i++)
             {
@@ -96,6 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 );
 
+
             }
         } catch (Exception e) {
             Log.i("Erreur ", e.toString());
@@ -103,6 +108,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     }
-*/
-    }
+
+
+
+
 }
