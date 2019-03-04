@@ -23,6 +23,7 @@ import com.google.android.gms.location.LocationServices;
 
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 
@@ -64,7 +65,7 @@ public class ClosestBenchesActivity extends Activity {
 
         // NE PAS OUBLIER DE REGARDER https://stackoverflow.com/questions/28301273/onconnected-not-being-called-to-get-location-updates-googleplayapi-for-locati au cas où
         // tuto : https://stackoverflow.com/questions/33415033/getting-current-location-in-android-studio-app
-        if (ContextCompat.checkSelfPermission(MainActivity.this,
+        if (ContextCompat.checkSelfPermission(ClosestBenchesActivity.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             //currentLocation = LocationServices.FusedLocationApi.getLastLocation(googleApiClient); // cas où permission gps déjà acceptée, on récupère la position géo
             mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -72,6 +73,20 @@ public class ClosestBenchesActivity extends Activity {
         else {
             // requestLocationPermission(); // si pas déjà acceptée, requester la permission
         }
+
+        mFusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            // Logic to handle location object
+                        }
+                    }
+                });
+
+
+
         ArrayList<String> values = new ArrayList<String>();
         int i = 0;
         while (i < listeBancs.size()){
