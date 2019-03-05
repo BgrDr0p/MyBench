@@ -93,8 +93,8 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
                         // Got last known location. In some rare situations this can be null.
                         if (location != null) {
                             latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                            Toast.makeText(ClosestBenchesActivity.this, "Lat :"+latLng.latitude+" ; Long : "+latLng.longitude,
-                                    Toast.LENGTH_SHORT).show();
+                            /*Toast.makeText(ClosestBenchesActivity.this, "Lat :"+latLng.latitude+" ; Long : "+latLng.longitude,
+                                    Toast.LENGTH_SHORT).show();*/
                         }
                     }
                 });
