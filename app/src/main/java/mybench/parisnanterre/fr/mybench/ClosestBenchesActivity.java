@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,11 +25,12 @@ import com.google.android.gms.location.LocationServices;
 
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 
-public class ClosestBenchesActivity extends Activity {
+public class ClosestBenchesActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     ListView listView ;
     ArrayList<Bench> listeBancs = new ArrayList<Bench>();
     private GoogleApiClient mGoogleApiClient;
@@ -35,7 +38,7 @@ public class ClosestBenchesActivity extends Activity {
     private LocationManager locationManager;
     //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
     private FusedLocationProviderClient mFusedLocationClient;
-
+    private LatLng latLng;
 
 
     @Override
@@ -56,7 +59,7 @@ public class ClosestBenchesActivity extends Activity {
         listeBancs.add(new Bench(48.852372565095216, 2.3695847475448555, "Banc à Bastille"));
         listeBancs.add(new Bench(48.85965097919809, 2.3721461680849063, "Banc à Richard Lenoir"));
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
+       mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
@@ -72,6 +75,7 @@ public class ClosestBenchesActivity extends Activity {
         }
         else {
             // requestLocationPermission(); // si pas déjà acceptée, requester la permission
+
         }
 
         mFusedLocationClient.getLastLocation()
@@ -80,7 +84,9 @@ public class ClosestBenchesActivity extends Activity {
                     public void onSuccess(Location location) {
                         // Got last known location. In some rare situations this can be null.
                         if (location != null) {
-                            // Logic to handle location object
+                            latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                            Toast.makeText(ClosestBenchesActivity.this, "Lat :"+latLng.latitude+" ; Long : "+latLng.longitude,
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -131,4 +137,20 @@ public class ClosestBenchesActivity extends Activity {
         });
     }
 
+
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
 }
