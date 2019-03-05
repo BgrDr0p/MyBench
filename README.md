@@ -55,6 +55,11 @@ Depuis Android studio :
 Depuis Android studio : 
   VCS > Checkout from version control > Git > Dans " Git Repository URL ", coller https://github.com/ElHassanBaghrar/MyBench.git > OK
 
+
+#### Builder l'apk
+cd ./MyBench
+./gradlew build
+
  Et voila ! le projet est prêt pour utilisation.
 
 ## Auteurs
