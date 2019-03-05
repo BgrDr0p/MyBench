@@ -27,8 +27,14 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
+
+import static java.lang.Math.acos;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+import static java.lang.Math.toRadians;
 
 public class ClosestBenchesActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     ListView listView ;
@@ -38,7 +44,7 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
     private LocationManager locationManager;
     //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
     private FusedLocationProviderClient mFusedLocationClient;
-    private LatLng latLng;
+    public LatLng latLng;
 
 
     @Override
@@ -59,7 +65,7 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
         listeBancs.add(new Bench(48.852372565095216, 2.3695847475448555, "Banc à Bastille"));
         listeBancs.add(new Bench(48.85965097919809, 2.3721461680849063, "Banc à Richard Lenoir"));
 
-       mGoogleApiClient = new GoogleApiClient.Builder(this)
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
@@ -78,6 +84,8 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
 
         }
 
+        Task<Location> l = mFusedLocationClient.getLastLocation();
+
         mFusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                     @Override
@@ -95,7 +103,19 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
 
         ArrayList<String> values = new ArrayList<String>();
         int i = 0;
+        Double distance = 0.0;
         while (i < listeBancs.size()){
+            /*Double latUser = (Double) latLng.latitude;
+            Double longUser = (Double) latLng.longitude;
+            Double latBanc = (Double) listeBancs.get(i).getX();
+            Double longBanc = (Double) listeBancs.get(i).getY();*/
+
+            //distance = Math.sqrt((Math.pow(latLng.latitude-0, 2) +  Math.pow(latLng.longitude-0, 2))); // calcul de la distance entre user et banc
+            //distance = Math.hypot(3-2, 3-1);
+            if(distance < 0) // mise à la valeur absolue
+                distance = distance * (-1);
+
+            listeBancs.get(i).setDistance(distance);
             values.add(listeBancs.get(i).getNom());
             i++;
         }
@@ -126,9 +146,17 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
                 String  itemValue    = (String) listView.getItemAtPosition(position);
 
                 // Show Alert
+                double latBanc = listeBancs.get(position).getX();
+                double longBanc = listeBancs.get(position).getX();
                 Toast.makeText(getApplicationContext(),
-                        "Ce banc est à :"+listeBancs.get(position).getX()+";"+ listeBancs.get(position).getY()+" et se trouve à "+ listeBancs.get(position).getDistance() , Toast.LENGTH_LONG)
+                        "Ce banc est à :"+listeBancs.get(position).getX()+";"+ listeBancs.get(position).getY()+" et se trouve à "+getDistanceMeters(latLng.latitude, latLng.longitude, latBanc, longBanc) + " metres " , Toast.LENGTH_LONG)
                         .show();
+
+                /* //afficher distance en coordonnées (ancienne version donc)
+                Toast.makeText(getApplicationContext(),
+                        "Ce banc est à :"+listeBancs.get(position).getX()+";"+ listeBancs.get(position).getY()+" et se trouve à "+ Math.sqrt((Math.pow(latLng.latitude-listeBancs.get(position).getX(), 2) +  Math.pow(latLng.longitude-listeBancs.get(position).getY(), 2))) , Toast.LENGTH_LONG)
+                        .show();
+                 */
 
 
 
@@ -137,7 +165,20 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
         });
     }
 
+    public static long getDistanceMeters(double lat1, double lng1, double lat2, double lng2) {
 
+        double l1 = toRadians(lat1);
+        double l2 = toRadians(lat2);
+        double g1 = toRadians(lng1);
+        double g2 = toRadians(lng2);
+
+        double dist = acos(sin(l1) * sin(l2) + cos(l1) * cos(l2) * cos(g1 - g2));
+        if(dist < 0) {
+            dist = dist + Math.PI;
+        }
+
+        return Math.round(dist * 6378100);
+    }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
