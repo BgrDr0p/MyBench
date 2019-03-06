@@ -1,4 +1,5 @@
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/185f393e20ed45d891307dbca782f2a9)](https://app.codacy.com/app/ElHassanBaghrar/MyBench?utm_source=github.com&utm_medium=referral&utm_content=ElHassanBaghrar/MyBench&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://img.shields.io/travis/ElHassanBaghrar/MyBench/master.svg?style=flat-square)](https://travis-ci.org/ElHassanBaghrar/MyBench)
 [![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=alert_status)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=coverage)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
