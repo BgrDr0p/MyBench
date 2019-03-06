@@ -26,7 +26,7 @@ public class MarkerDataSource {
     public void close(){
         dbhelper.getReadableDatabase();
         if (db != null && db.isOpen())
-        db.close();
+            db.close();
     }
     // ajouter un banc
     public long addMarker(MyMarkerObj m){
@@ -35,6 +35,7 @@ public class MarkerDataSource {
         v.put(MySQLHelper.TITLE, m.getTitle());
         v.put(MySQLHelper.SNIPPET, m.getSnippet());
         v.put(MySQLHelper.POSITION,m.getPosition());
+
 
 
 

@@ -15,11 +15,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
+import mybench.parisnanterre.fr.mybench.BDD.MyMarkerObj;
+
 public class MainActivity extends AppCompatActivity {
     private int STORAGE_LOCATION_CODE = 1;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

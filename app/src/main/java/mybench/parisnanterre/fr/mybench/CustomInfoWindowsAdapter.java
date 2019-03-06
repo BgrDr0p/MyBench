@@ -16,6 +16,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
+import mybench.parisnanterre.fr.mybench.BDD.MarkerDataSource;
+
 public class CustomInfoWindowsAdapter implements GoogleMap.InfoWindowAdapter {
 
 
@@ -35,14 +37,15 @@ public class CustomInfoWindowsAdapter implements GoogleMap.InfoWindowAdapter {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v =  inflater.inflate(R.layout.custom_infowindow, null);
-        /*
-        TextView tvGir = (TextView) v.findViewById(R.id.environnement);
-        TextView tvDetails = (TextView) v.findViewById(R.id.pollution);
+
+        TextView tvEnvironnement = (TextView) v.findViewById(R.id.environnement);
+       // TextView tvDetails = (TextView) v.findViewById(R.id.pollution);
         // TextView tvLng = (TextView) v.findViewById(R.id.tv_lng);
-        tvGir.setText("Mauvais paysage");
-        tvDetails.setText("Très pollué");
+      //  tvGir.setText("Mauvais paysage");
+      //  tvDetails.setText("Très pollué");
         //tvLng.setText("Longitude:"+ latLng.longitude);
-        */
+
+
 
 
         return v;

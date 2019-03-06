@@ -14,6 +14,7 @@ public class MySQLHelper extends SQLiteOpenHelper{
     public static final String TITLE = "loc_title";
     public static final String SNIPPET = "loc_snippet";
     public static final String POSITION = "loc_position";
+    public static final String ENVIRONNEMENT = "loc_environnement";
 
     private static final int D_VERSION = 1;
 
@@ -23,6 +24,7 @@ public class MySQLHelper extends SQLiteOpenHelper{
                     + ID_COL + " integer primary key autoincrement, "
                     + TITLE + " text, "
                     + SNIPPET + " text, "
+                    + ENVIRONNEMENT + "text,"
                     + POSITION + " text);"
             ;
     public MySQLHelper(Context context) {
