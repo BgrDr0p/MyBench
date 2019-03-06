@@ -107,19 +107,6 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:background="@android:color/holo_blue_dark"
-            android:textColor="@android:color/white"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_gravity="center"
-            android:shadowColor="@android:color/holo_blue_light"
-            android:id="@+id/btn_note"
-            android:text="Notez ce banc"
-
-            />
 
 
 

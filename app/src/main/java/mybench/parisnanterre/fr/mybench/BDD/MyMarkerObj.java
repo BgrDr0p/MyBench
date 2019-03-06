@@ -1,4 +1,3 @@
-
 package mybench.parisnanterre.fr.mybench.BDD;
 
 
@@ -9,6 +8,7 @@ public class MyMarkerObj {
     private String snippet;
     private String position;
 
+
     public MyMarkerObj() {
     }
 
@@ -17,12 +17,9 @@ public class MyMarkerObj {
         this.title = title;
         this.snippet = snippet;
         this.position = position;
+
     }
-    public MyMarkerObj(String title, String snippet, String position) {
-        this.title = title;
-        this.snippet = snippet;
-        this.position = position;
-    }
+
 
     /**
      * @return the id
@@ -30,6 +27,7 @@ public class MyMarkerObj {
     public long getId() {
         return id;
     }
+
 
     /**
      * @param id the id to set

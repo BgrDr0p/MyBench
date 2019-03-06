@@ -33,6 +33,23 @@
                 <category android:name="android.intent.category.MAIN" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ClosestBenchesActivity" >
+        <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+
+        <activity android:name=".RateBenchActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -45,17 +62,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ClosestBenchesActivity" />
-<<<<<<< HEAD
-        <activity android:name=".RateBenchActivity"></activity>
-=======
+
+
+
+
+
 
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@layout/custom_infowindow"
             />
 
->>>>>>> 347ffe2ce869653de23122b4463582ed48a909cd
     </application>
 
 </manifest>
