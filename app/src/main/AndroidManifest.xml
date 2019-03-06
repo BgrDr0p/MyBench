@@ -46,7 +46,16 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".ClosestBenchesActivity" />
+<<<<<<< HEAD
         <activity android:name=".RateBenchActivity"></activity>
+=======
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@layout/custom_infowindow"
+            />
+
+>>>>>>> 347ffe2ce869653de23122b4463582ed48a909cd
     </application>
 
 </manifest>
