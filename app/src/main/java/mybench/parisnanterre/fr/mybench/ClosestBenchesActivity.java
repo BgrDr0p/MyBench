@@ -3,19 +3,17 @@ package mybench.parisnanterre.fr.mybench;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
@@ -24,7 +22,6 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -40,7 +37,7 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
     ListView listView ;
     ArrayList<Bench> listeBancs = new ArrayList<Bench>();
     private GoogleApiClient mGoogleApiClient;
-    private Location currentLocation;
+  //  private Location currentLocation;
     private LocationManager locationManager;
     //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
     private FusedLocationProviderClient mFusedLocationClient;
