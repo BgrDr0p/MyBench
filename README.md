@@ -21,11 +21,15 @@ C'est une application android qui permettra aux personnes qui reside en Île de 
 ## Système de Build
 * [Gradle](https://gradle.org/)
 
+## Téléchargement
+
+L'application peut-être téléchargée ici :  https://github.com/ElHassanBaghrar/MyBench/releases/download/v1.0-alpha/MyBench_v1.0-alpha.apk
+
 ## Installation
 
 ### Prérequis
 
-Avant de pouvoir utiliser notre projet, il faut installer certains outils.
+Avant de pouvoir utiliser notre projet, il faut procéder aux installations suivantes.
 
 #### Installer Android Studio et le SDK
 
@@ -38,7 +42,7 @@ Depuis la fenêtres de bienvenue :
   
 #### Installer Git
 
-- Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
+- Télécharger et installer Git : [Télécharger Git] (https://gitforwindows.org/)
 
 ### Cloner MyBench
 
@@ -57,7 +61,14 @@ Depuis Android studio :
 
 #### Builder l'apk
 cd ./MyBench
-./gradlew build
+./gradlew
+ou sur windows :
+./gradlew.bat
+
+et enfin :
+
+adb install -r MyBench.apk
+
 
  Et voila ! le projet est prêt pour utilisation.
 
