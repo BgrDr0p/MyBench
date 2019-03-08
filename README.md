@@ -1,66 +1,37 @@
+## Welcome to GitHub Pages
 
-[![Build Status](https://img.shields.io/travis/ElHassanBaghrar/MyBench/master.svg?style=flat-square)](https://travis-ci.org/ElHassanBaghrar/MyBench)
-[![SonarCloud Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=alert_status)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=coverage)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
-[![SonarCloud Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=security_rating)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
-[![SonarCloud Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=sqale_index)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
-[![License](https://img.shields.io/github/license/ElHassanBaghrar/MyBench.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/github/tag/ElHassanBaghrar/MyBench.svg?label=version&style=flat-square)](build.gradle)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/ElHassanBaghrar/MyBench.svg?columns=all)](https://waffle.io/ElHassanBaghrar/MyBench)
+You can use the [editor on GitHub](https://github.com/anthonynascimento/optiDB/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
 
-# MyBench
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-MyBench, une application android de gestion pour trouver un banc dans la region Ile de France.
+### Markdown
 
-## Qu'est ce que c'est ?
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-C'est une application android qui permettra aux personnes qui reside en Île de France de trouver facilement un banc proche de leur géolocalisation pour leur pose dejeuner ou aux touristes pour se reposer lors de leurs differentes visites à Paris.
+```markdown
+Syntax highlighted code block
 
-## Fonctionnalités 
+# Header 1
+## Header 2
+### Header 3
 
+- Bulleted
+- List
 
-## Système de Build
-* [Gradle](https://gradle.org/)
+1. Numbered
+2. List
 
-## Installation
+**Bold** and _Italic_ and `Code` text
 
-### Prérequis
+[Link](url) and ![Image](src)
+```
 
-Avant de pouvoir utiliser notre projet, il faut installer certains outils.
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-#### Installer Android Studio et le SDK
+### Jekyll Themes
 
-- Télécharger Android studio et l'installer : [Télécharger Android Studio](https://developer.android.com/studio/index.html)
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anthonynascimento/optiDB/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-- Télécharger le SDK : 
+### Support or Contact
 
-Depuis la fenêtres de bienvenue : 
-  Configure > SDK Manager > SDK TOOLS > Cocher Android SDK Tools > OK
-  
-#### Installer Git
-
-- Télécharger et installer Git : [Télécharger Git](https://gitforwindows.org/)
-
-### Cloner MyBench
-
-Une fois Git installé, il suffit de suivre les instructions ci-dessous.
-
-#### Lier Git à Android Studio 
-
-Depuis Android studio : 
-  File > Settings > Version Control > Git > Dans " path to git Excecutable ", coller le chemin du git.exe > OK
-  
-#### Cloner le répertoire MyBench
-
-Depuis Android studio : 
-  VCS > Checkout from version control > Git > Dans " Git Repository URL ", coller https://github.com/ElHassanBaghrar/MyBench.git > OK
-
- Et voila ! le projet est prêt pour utilisation.
-
-## Auteurs
-* **Kadjo ASSOHOUN** - [Github](https://github.com/Kadjoassohoun)
-* **ElHassan BAGHRAR** - [Github](https://github.com/ElHassanBaghrar)
-* **Sami BOULHAZAIZ** - [Github](https://github.com/Henley74)
-
-  
-
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

@@ -39,6 +39,7 @@ public class MarkerDataSource {
 
 
 
+
         return db.insert(MySQLHelper.TABLE_NAME, null, v);
 
     }
@@ -70,7 +71,6 @@ public class MarkerDataSource {
         MyMarkerObj m = new MyMarkerObj();
         m.setTitle(cursor.getString(0));
         m.setSnippet(cursor.getString(1));
-
         m.setPosition(cursor.getString(2));
         return m;
     }
