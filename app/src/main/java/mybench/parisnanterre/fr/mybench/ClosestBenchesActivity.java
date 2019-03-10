@@ -33,7 +33,8 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.toRadians;
 
-public class ClosestBenchesActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class ClosestBenchesActivity extends Activity implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener {
     ListView listView ;
     ArrayList<Bench> listeBancs = new ArrayList<Bench>();
     private GoogleApiClient mGoogleApiClient;
