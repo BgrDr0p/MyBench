@@ -144,9 +144,12 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
 
                 // Show Alert
                 double latBanc = listeBancs.get(position).getX();
-                double longBanc = listeBancs.get(position).getX();
-                Toast.makeText(getApplicationContext(),
+                double longBanc = listeBancs.get(position).getY();
+                /*Toast.makeText(getApplicationContext(),
                         "Ce banc est à :"+listeBancs.get(position).getX()+";"+ listeBancs.get(position).getY()+" et se trouve à "+getDistanceMeters(latLng.latitude, latLng.longitude, latBanc, longBanc) + " metres " , Toast.LENGTH_LONG)
+                        .show();*/
+                Toast.makeText(getApplicationContext(),
+                        "Votre banc se trouve à "+getDistanceMeters(latLng.latitude, latLng.longitude, latBanc, longBanc) + " metres " , Toast.LENGTH_LONG)
                         .show();
 
                 /* //afficher distance en coordonnées (ancienne version donc)

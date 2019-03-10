@@ -47,11 +47,16 @@ public class MainActivity extends AppCompatActivity {
         buttonClosest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(MainActivity.this, "You have already granted this permission!",
                             Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(getApplicationContext(), ClosestBenchesActivity.class);
                     startActivity(i);
-
+                }
+                else {
+                    requestLocationPermission();
+                }
             }
         });
     }
