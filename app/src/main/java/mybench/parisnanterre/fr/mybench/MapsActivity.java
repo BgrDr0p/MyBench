@@ -104,13 +104,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         .position(new LatLng(LATITUDE,LONGITUDE))
                         .title(m.get(i).getTitle())
                         .snippet(m.get(i).getSnippet())
+<<<<<<< HEAD
                         .icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
+=======
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
 
 
                 );
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
             }
         } catch (Exception e) {
             Log.i("Erreur11 ", e.toString());

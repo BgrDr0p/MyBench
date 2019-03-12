@@ -11,20 +11,28 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private int STORAGE_LOCATION_CODE = 1;
+        private int STORAGE_LOCATION_CODE = 1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
         Button buttonRequest = findViewById(R.id.bt_Banc);
         Button buttonClosest = findViewById(R.id.bt_Closest);
+<<<<<<< HEAD
+=======
+        Button buttonFormulaire = findViewById(R.id.bt_formulaire);
+        Button buttonBenchs = findViewById(R.id.bt_benchs);
+
+
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
 
         buttonRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     requestLocationPermission();
                 }
-                // test commit to branch
+
             }
         });
 
@@ -54,6 +62,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< HEAD
+=======
+        try
+        {
+            buttonFormulaire.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                            Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+                    startActivity(i);
+
+                }
+            })
+            ;
+        }
+        catch (Exception e)
+        {
+            Log.i("Erreur0  ", e.toString());
+        }
+
+        buttonBenchs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "You have already granted this permission!",
+                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), MainBenchActivity.class);
+                startActivity(i);
+
+            }
+        })
+        ;
+
+
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
     }
 
     private void requestLocationPermission() {

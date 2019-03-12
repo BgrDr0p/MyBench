@@ -1,14 +1,15 @@
 package mybench.parisnanterre.fr.mybench.BDD;
 
-
-
 public class MyMarkerObj {
     private long id;
     private String title;
     private String snippet;
     private String position;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
     public MyMarkerObj() {
     }
 

@@ -4,8 +4,18 @@
 
     <!-- demande à l'utilisateur la permisison d'acceder à son GPS (pour les API inferieure a 5.1) -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- API REST -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- API REST -->
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -33,6 +43,7 @@
                 <category android:name="android.intent.category.MAIN" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity android:name=".ClosestBenchesActivity" >
         <intent-filter>
@@ -50,6 +61,8 @@
         </activity>
 
 
+=======
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -62,6 +75,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+<<<<<<< HEAD
 
 
 
@@ -74,5 +88,19 @@
             />
 
     </application>
+=======
+        <activity android:name=".ClosestBenchesActivity"></activity>
+        <activity android:name=".MainBenchActivity"></activity>
+        <activity android:name=".ConnexionActivity"></activity>
+
+
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+>>>>>>> ed91151aa43fd8f4fad016c75fc7dab418616213
 
 </manifest>
