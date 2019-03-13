@@ -1,7 +1,6 @@
 
 [![Build Status](https://img.shields.io/travis/ElHassanBaghrar/MyBench/master.svg?style=flat-square)](https://travis-ci.org/ElHassanBaghrar/MyBench)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/185f393e20ed45d891307dbca782f2a9)](https://app.codacy.com/app/ElHassanBaghrar/MyBench?utm_source=github.com&utm_medium=referral)
-[![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=ElHassanBaghrar_MyBench&metric=coverage)](https://sonarcloud.io/dashboard?id=ElHassanBaghrar_MyBench)
 [![License](https://img.shields.io/github/license/ElHassanBaghrar/MyBench.svg?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/github/tag-date/ElHassanBaghrar/MyBench.svg)](build.gradle)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ElHassanBaghrar/MyBench.svg?columns=all)](https://waffle.io/ElHassanBaghrar/MyBench)
