@@ -23,6 +23,8 @@ C'est une application android qui permettra aux personnes qui reside en Île de 
 
 L'application peut-être téléchargée ici :  https://github.com/ElHassanBaghrar/MyBench/releases/download/v1.0-alpha/MyBench_v1.0-alpha.apk
 
+L'application exige la permission d'accéder à la géolocalisation pour proposer à l'utilisateur les bancs les plus proches.
+
 ## Installation
 
 ### Prérequis
