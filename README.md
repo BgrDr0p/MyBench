@@ -7,7 +7,7 @@
 
 # MyBench
 
-MyBench, une application android de gestion pour trouver un banc dans la region Ile de France.
+MyBench, une application android de géolocalisation pour trouver un banc dans la region Ile de France.
 
 ## Qu'est ce que c'est ?
 
