@@ -16,6 +16,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -25,6 +31,10 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -42,6 +52,7 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
     //private LocationRequest mLocationRequest; // comprendre comment LocationRequest fonctionne
     private FusedLocationProviderClient mFusedLocationClient;
     public LatLng latLng;
+    private RequestQueue mQueue; // queue des requêtes API envoyées, utilisé ligne 211~
 
 
     @Override
@@ -164,6 +175,42 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
 
         });
     }
+
+
+    private void jsonParse() {
+
+        String url = "https://api.myjson.com/bins/kp9wz";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("employees");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject employee = jsonArray.getJSONObject(i);
+
+                                String firstName = employee.getString("firstname");
+                                int age = employee.getInt("age");
+                                String mail = employee.getString("mail");
+
+                                //mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        mQueue.add(request);
+    }
+
 
     public static long getDistanceMeters(double lat1, double lng1, double lat2, double lng2) {
 
