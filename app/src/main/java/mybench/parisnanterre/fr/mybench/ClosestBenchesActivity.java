@@ -46,6 +46,7 @@ import static java.lang.Math.toRadians;
 public class ClosestBenchesActivity extends Activity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     ListView listView ;
     ArrayList<Bench> listeBancs = new ArrayList<Bench>();
+    ArrayList<Bench> bancsalentours = new ArrayList<Bench>();
     private GoogleApiClient mGoogleApiClient;
   //  private Location currentLocation;
     private LocationManager locationManager;
@@ -177,20 +178,32 @@ public class ClosestBenchesActivity extends Activity implements GoogleApiClient.
     }
 
 
-    private void jsonParse() {
+    private ArrayList<Bench> jsonParse() {
 
-        String url = "https://api.myjson.com/bins/kp9wz";
+        String url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=mobilierenvironnementparis2011&facet=info&facet=libelle&geofilter.polygon=(48.8520657%2C2.340719)%2C+(48.8539556%2C2.3331789)%2C+(48.1520657%2C2.240719)";
+        // URL : ENCORE EN TEST NE PAS OUBLIER D'ADAPTER APRES LES PARAM HEIN
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
+                            JSONArray records = response.getJSONArray("records");
+                            JSONObject records0 = records.getJSONObject(0);
+                            JSONObject fields = records0.getJSONObject("fields");
+                            /* à faire :
+                            * enregistrer le nom du banc
+                            * transférer tout ça dans la boucle peut-être ? ou au moins la partie avec fields
+                            * continuer à parcourir le json JSONobject par JSONObject
+                            *
+                            * */
+
+                            jsonArray = response.getJSONArray("fields");
+                            bancsalentours = new ArrayList<Bench>();
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject employee = jsonArray.getJSONObject(i);
-
+                                //bancsalentours.add(new Bench(mettre coordonnes gettées));
                                 String firstName = employee.getString("firstname");
                                 int age = employee.getInt("age");
                                 String mail = employee.getString("mail");

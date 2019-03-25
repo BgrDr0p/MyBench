@@ -13,6 +13,13 @@ public class Bench {
         this.nom = nom;
     }
 
+    public Bench(double x, double y) {
+        this.x = x;
+        this.y = y;
+        this.distance = 0.00;
+        this.nom = "sans nom";
+    }
+
     public double getX() {
         return x;
     }
