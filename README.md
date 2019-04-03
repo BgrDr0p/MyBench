@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/185f393e20ed45d891307dbca782f2a9)](https://app.codacy.com/app/ElHassanBaghrar/MyBench?utm_source=github.com&utm_medium=referral)
 [![License](https://img.shields.io/github/license/ElHassanBaghrar/MyBench.svg?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/github/tag-date/ElHassanBaghrar/MyBench.svg)](build.gradle)
-https://img.shields.io/github/release/ElHassanBaghrar/MyBench.svg
+image:https://img.shields.io/github/release/ElHassanBaghrar/MyBench.svg?style=plastic[GitHub release]
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/ElHassanBaghrar/MyBench.svg?columns=all)](https://waffle.io/ElHassanBaghrar/MyBench)
 
 # MyBench
